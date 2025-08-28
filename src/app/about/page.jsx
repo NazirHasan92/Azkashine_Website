@@ -54,10 +54,10 @@ function AboutUs() {
         <h2 className="mt-6 block max-w-5xl font-display text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:text-6xl">About Us</h2>
         <div className="mt-10 max-w-2xl space-y-6 text-base centered mx-auto">
           <p className='mt-6 max-w-3xl text-neutral-600'>
-            AzkaShine Software and Services Private Limited stands as a beacon of technological excellence, providing state-of-the-art software solutions and cutting-edge IT services.
+            <strong className="font-semibold text-neutral-950"> AzkaShine Software & Services Pvt Ltd </strong> stands as a beacon of technological excellence, providing state-of-the-art software solutions and cutting-edge IT services.
           </p>
           <p className='mt-6 max-w-3xl text-neutral-600'>
-            Our focus is firmly set on driving innovation and leveraging our extensive expertise across key technology domains, including Network & Wireless Technologies, DevOps & Test Automation, Artificial Intelligence (AI) & Machine Learning (ML), SAP & Enterprise Data Management, and VLSI & Embedded Systems.
+            Our focus is firmly set on driving innovation and leveraging our extensive expertise across key technology domains, including Network & Wireless Technologies, DevOps & Test Automation, Artificial Intelligence (AI) & Machine Learning (ML), and SAP & Enterprise Data Management.
           </p>
           <p className='mt-6 max-w-3xl text-neutral-600'> 
             Our commitment to fostering long-term, trust-based relationships with our clients is anchored in philosophy of quality and mutual success. AzkaShine's diverse portfolio extends its reach into a variety of sectors, including Wireless & Telecommunications, Mobility, Internet of Things (IoT), Energy, Oil & Gas, Logistics and Manufacturing. By delivering tailored solutions that meet unique challenges of each industry, we ensure our clients are well-equipped.
@@ -86,7 +86,6 @@ export const metadata = {
 
 export default async function About() {
   let blogArticles = (await loadArticles()).slice(0, 2)
-  console.log(blogArticles)
 
   return (
     <RootLayout>

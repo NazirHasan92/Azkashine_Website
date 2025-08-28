@@ -101,7 +101,7 @@ function Services() {
             <ListItem title="Network & Wireless">
               We deliver exceptional services in Network and Wireless Technologies, focusing on cutting-edge design, implementation, and optimization of complex network infrastructures
                 <Link
-                  href={""}
+                  href={"services/network"}
                   className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
                   aria-label={`Read more`}
                 >
@@ -115,7 +115,7 @@ function Services() {
             <ListItem title="DevOps">
               We excel in delivering state-of-the-art DevOps and Test Automation services designed to enhance agility and streamline software delivery pipelines.
                 <Link
-                  href={""}
+                  href={"services/devops"}
                   className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
                   aria-label={`Read more`}
                 >
@@ -128,7 +128,7 @@ function Services() {
             <ListItem title="Artificial Intelligence">
               We specialize in pioneering AI and ML solutions that revolutionize business intelligence and operational efficiency.
                 <Link
-                  href={""}
+                  href={"services/ai"}
                   className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
                   aria-label={`Read more`}
                 >
@@ -141,7 +141,7 @@ function Services() {
             <ListItem title="SAP & Enterprise">
               We provide cutting-edge SAP and Enterprise Data Management solutions, optimizing business processes and data governance.
                 <Link
-                  href={""}
+                  href={"services/sap"}
                   className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
                   aria-label={`Read more`}
                 >
@@ -154,7 +154,7 @@ function Services() {
              <ListItem title="Placement Services (B2B)">
               We offer premier Placement Services, connecting businesses with top-tier talent through our extensive network and rigorous selection processes.
                 <Link
-                  href={""}
+                  href={"services/placement_services"}
                   className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
                   aria-label={`Read more`}
                 >

@@ -1,7 +1,7 @@
 {
-  "/work/page": "app/work/page.js",
-  "/work/ai/page": "app/work/ai/page.js",
-  "/work/sap/page": "app/work/sap/page.js",
-  "/work/network/page": "app/work/network/page.js",
-  "/about/page": "app/about/page.js"
+  "/page": "app/page.js",
+  "/services/page": "app/services/page.js",
+  "/about/page": "app/about/page.js",
+  "/products/page": "app/products/page.js",
+  "/careers/page": "app/careers/page.js"
 }

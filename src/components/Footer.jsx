@@ -7,17 +7,18 @@ import { socialMediaProfiles } from '@/components/SocialMedia'
 
 const navigation = [
   {
-    title: 'Work',
+    title: 'Services',
     links: [
-      { title: 'Network', href: '/work/network' },
-      { title: 'Phobia', href: '/work/phobia' },
+      { title: 'Artificial Intelligence', href: '/services/ai' },
+      { title: 'DevOps', href: '/services/devops' },
+      { title: 'SAP', href: '/services/sap' },
       {
         title: (
           <>
             See all <span aria-hidden="true">&rarr;</span>
           </>
         ),
-        href: '/work',
+        href: '/services',
       },
     ],
   },
@@ -25,9 +26,9 @@ const navigation = [
     title: 'Company',
     links: [
       { title: 'About', href: '/about' },
-      { title: 'Process', href: '/process' },
-      { title: 'Blog', href: '/blog' },
-      { title: 'Contact us', href: '/contact' },
+      { title: 'Services', href: '/services' },
+      { title: 'Products', href: '/products' },
+      { title: 'Careers', href: '/careers' },
     ],
   },
   {
