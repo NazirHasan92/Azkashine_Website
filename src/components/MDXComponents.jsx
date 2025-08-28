@@ -28,7 +28,7 @@ export const MDXComponents = {
   },
   StatList({ className, ...props }) {
     return (
-      <StatList className={clsx('my-32 max-w-none!', className)} {...props} />
+      <StatList className={clsx('my-16 max-w-none!', className)} {...props} />
     )
   },
   StatListItem,
@@ -67,7 +67,7 @@ export const MDXComponents = {
     return (
       <div
         className={clsx(
-          '*:mx-auto *:max-w-3xl [&>:first-child]:mt-0! [&>:last-child]:mb-0!',
+          '*:mx-auto [&>:first-child]:mt-0! [&>:last-child]:mb-0!',
           className,
         )}
         {...props}

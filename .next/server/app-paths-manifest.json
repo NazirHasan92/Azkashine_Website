@@ -1,0 +1,7 @@
+{
+  "/work/page": "app/work/page.js",
+  "/work/ai/page": "app/work/ai/page.js",
+  "/work/sap/page": "app/work/sap/page.js",
+  "/work/network/page": "app/work/network/page.js",
+  "/about/page": "app/about/page.js"
+}

@@ -19,6 +19,7 @@ export const metadata = {
 
 export default async function Blog() {
   let articles = await loadArticles()
+  console.log(articles)
 
   return (
     <RootLayout>

@@ -8,62 +8,62 @@ import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
-import { Testimonial } from '@/components/Testimonial'
-import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-light.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
-import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
-import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
-import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
-import logoUnseal from '@/images/clients/unseal/logo-light.svg'
+import { Button } from '@/components/Button'
+
+import alphaPower from '@/images/clients/alpha_power.png'
+import csg from '@/images/clients/csg.png'
+import isms from '@/images/clients/isms.png'
+import openInsights from '@/images/clients/open_insights.png'
+import prowess from '@/images/clients/prowess.png'
+import sasken from '@/images/clients/sasken.png'
+import unionsys from '@/images/clients/unionsys.png'
+
 import imageLaptop from '@/images/laptop.jpg'
 import { loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
+
 const clients = [
-  ['Phobia', logoPhobiaLight],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['Alpha Power', alphaPower],
+  ['CSG', csg],
+  ['isms', isms],
+  ['Open Insights Technology', openInsights],
+  ['Prowess', prowess],
+  ['Sasken', sasken],
+  ['UNIONSYS TECHNOLOGIES', unionsys],
 ]
 
-const clients2 = [
-  ['Phobia', logoPhobia],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
-]
+function ArrowIcon(props) {
+  return (
+    <svg viewBox="0 0 24 6" aria-hidden="true" {...props}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M24 3 18 .5v2H0v1h18v2L24 3Z"
+      />
+    </svg>
+  )
+}
 
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="mt-24 rounded-4xl bg-neutral-200 py-20 sm:mt-32 sm:py-32 lg:mt-58">
       <Container>
         <FadeIn className="flex items-center gap-x-8">
-          <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-            We’ve worked with hundreds of amazing people
-          </h2>
-          <div className="h-px flex-auto bg-neutral-800" />
+          <h1 className="font-display text-xl font-medium tracking-tight text-black text-balance  sm:text-5xl">
+            Our Global Partners
+          </h1>
+          <div className="h-px flex-auto bg-black" />
         </FadeIn>
         <FadeInStagger faster>
           <ul
             role="list"
-            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
+            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4 rounded-4xl"
           >
             {clients.map(([client, logo]) => (
               <li key={client}>
                 <FadeIn>
-                  <Image src={logo} alt={client} unoptimized />
+                  <Image src={logo} alt={client} unoptimized  />
                 </FadeIn>
               </li>
             ))}
@@ -74,102 +74,16 @@ function Clients() {
   )
 }
 
-function Clients2() {
-  return (
-    <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          You’re in good company
-        </h2>
-      </FadeIn>
-      <FadeInStagger className="mt-10" faster>
-        <Border as={FadeIn} />
-        <ul
-          role="list"
-          className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
-        >
-          {clients2.map(([client, logo]) => (
-            <li key={client} className="group">
-              <FadeIn className="overflow-hidden">
-                <Border className="pt-12 group-nth-[-n+2]:-mt-px sm:group-nth-3:-mt-px lg:group-nth-4:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
-                </Border>
-              </FadeIn>
-            </li>
-          ))}
-        </ul>
-      </FadeInStagger>
-    </Container>
-  )
-}
-
-function CaseStudies({ caseStudies }) {
-  return (
-    <>
-      <SectionIntro
-        title="Harnessing technology for a brighter future"
-        className="mt-24 sm:mt-32 lg:mt-40"
-      >
-        <p>
-          We believe technology is the answer to the world’s greatest
-          challenges. It’s also the cause, so we find ourselves in bit of a
-          catch 22 situation.
-        </p>
-      </SectionIntro>
-      <Container className="mt-16">
-        <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {caseStudies.map((caseStudy) => (
-            <FadeIn key={caseStudy.href} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
-                <h3>
-                  <Link href={caseStudy.href}>
-                    <span className="absolute inset-0 rounded-3xl" />
-                    <Image
-                      src={caseStudy.logo}
-                      alt={caseStudy.client}
-                      className="h-16 w-16"
-                      unoptimized
-                    />
-                  </Link>
-                </h3>
-                <p className="mt-6 flex gap-x-2 text-sm text-neutral-950">
-                  <time
-                    dateTime={caseStudy.date.split('-')[0]}
-                    className="font-semibold"
-                  >
-                    {caseStudy.date.split('-')[0]}
-                  </time>
-                  <span className="text-neutral-300" aria-hidden="true">
-                    /
-                  </span>
-                  <span>Case study</span>
-                </p>
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
-                  {caseStudy.title}
-                </p>
-                <p className="mt-4 text-base text-neutral-600">
-                  {caseStudy.description}
-                </p>
-              </article>
-            </FadeIn>
-          ))}
-        </FadeInStagger>
-      </Container>
-    </>
-  )
-}
-
 function Services() {
   return (
     <>
       <SectionIntro
-        eyebrow="Services"
-        title="We help you identify, explore and respond to new opportunities."
+        eyebrow=""
+        title="Our Services"
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          As long as those opportunities involve giving us money to re-purpose
-          old projects — we can come up with an endless number of those.
+          We believe in efficiency and maximizing our resources to provide the best value to our clients. 
         </p>
       </SectionIntro>
       <Container className="mt-16">
@@ -184,24 +98,70 @@ function Services() {
             </FadeIn>
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
-            <ListItem title="Web development">
-              We specialise in crafting beautiful, high quality marketing pages.
-              The rest of the website will be a shell that uses lorem ipsum
-              everywhere.
+            <ListItem title="Network & Wireless">
+              We deliver exceptional services in Network and Wireless Technologies, focusing on cutting-edge design, implementation, and optimization of complex network infrastructures
+                <Link
+                  href={""}
+                  className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
+                  aria-label={`Read more`}
+                >
+                  Read more
+                  <ArrowIcon className="w-6 flex-none fill-current" />
+                  <span className="absolute inset-0" />
+                </Link>
+
             </ListItem>
-            <ListItem title="Application development">
-              We have a team of skilled developers who are experts in the latest
-              app frameworks, like Angular 1 and Google Web Toolkit.
+
+            <ListItem title="DevOps">
+              We excel in delivering state-of-the-art DevOps and Test Automation services designed to enhance agility and streamline software delivery pipelines.
+                <Link
+                  href={""}
+                  className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
+                  aria-label={`Read more`}
+                >
+                  Read more
+                  <ArrowIcon className="w-6 flex-none fill-current" />
+                  <span className="absolute inset-0" />
+                </Link>
             </ListItem>
-            <ListItem title="E-commerce">
-              We are at the forefront of modern e-commerce development. Which
-              mainly means adding your logo to the Shopify store template we’ve
-              used for the past six years.
+
+            <ListItem title="Artificial Intelligence">
+              We specialize in pioneering AI and ML solutions that revolutionize business intelligence and operational efficiency.
+                <Link
+                  href={""}
+                  className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
+                  aria-label={`Read more`}
+                >
+                  Read more
+                  <ArrowIcon className="w-6 flex-none fill-current" />
+                  <span className="absolute inset-0" />
+                </Link>
             </ListItem>
-            <ListItem title="Custom content management">
-              At Studio we understand the importance of having a robust and
-              customised CMS. That’s why we run all of our client projects out
-              of a single, enormous Joomla instance.
+
+            <ListItem title="SAP & Enterprise">
+              We provide cutting-edge SAP and Enterprise Data Management solutions, optimizing business processes and data governance.
+                <Link
+                  href={""}
+                  className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
+                  aria-label={`Read more`}
+                >
+                  Read more
+                  <ArrowIcon className="w-6 flex-none fill-current" />
+                  <span className="absolute inset-0" />
+                </Link>
+            </ListItem>
+
+             <ListItem title="Placement Services (B2B)">
+              We offer premier Placement Services, connecting businesses with top-tier talent through our extensive network and rigorous selection processes.
+                <Link
+                  href={""}
+                  className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"
+                  aria-label={`Read more`}
+                >
+                  Read more
+                  <ArrowIcon className="w-6 flex-none fill-current" />
+                  <span className="absolute inset-0" />
+                </Link>
             </ListItem>
           </List>
         </div>
@@ -220,37 +180,39 @@ export default async function Home() {
 
   return (
     <RootLayout>
-      <Container className="mt-24 sm:mt-32 md:mt-36">
-        <FadeIn className="max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:text-10xl">
-            Transformation Admired
+      <Container className="mt-24 sm:mt-32 md:mt-56">
+        <FadeIn className="max-w-5xl">
+          <h1 className="font-display text-6xl font-medium tracking-tight text-balance text-neutral-950 sm:text-7xl">
+            Transformation Admired 
           </h1>
-          {/* <p className="mt-6 text-xl text-neutral-600">
-           Every business has a vision. At <b>AzkaShine Software & Services</b>, our mission is to turn that vision into reality. We don’t just deliver technology—we create solutions that empower people, transform processes, and open doors to new possibilities.
+
+          <h1 className="mt-6 font-display text-base font-semibold text-neutral-950 text-xl">
+            Unlock potential through software and services tailored for your success.
+          </h1>
+
+          <p className="mt-6 text-neutral-600">
+           We drive technology-led transformation, delivering future-ready solutions that empower enterprises to scale, innovate, and thrive in an evolving digital landscape.
           </p>
-          <p className="mt-6 text-xl text-neutral-600">
-            Our journey is built on trust, innovation, and collaboration. By combining deep industry knowledge with cutting-edge technology, we help our partners stay ahead in a fast-changing world.
+
+          <p>
+            <Button
+              href={"/about"}
+              aria-label={`Read more`}
+              className="mt-8"
+            >
+              Read more
+            </Button>
           </p>
-          <p className="mt-6 text-xl text-neutral-600">
-            For us, success isn’t just about delivering projects—it’s about building lasting relationships. That’s why we go beyond being a service provider and become a true partner, committed to your growth and success.
-          </p> */}
+
         </FadeIn>
       </Container>
 
+        {/* <CaseStudies caseStudies={caseStudies} /> */}
+
+
+
       <Clients />
 
-      <Clients2 />
-
-      <CaseStudies caseStudies={caseStudies} />
-
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
-      >
-        The team at Studio went above and beyond with our onboarding, even
-        finding a way to access the user’s microphone without triggering one of
-        those annoying permission dialogs.
-      </Testimonial>
 
       <Services />
 

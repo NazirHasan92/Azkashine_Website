@@ -1,12 +1,15 @@
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
-import { FadeIn } from '@/components/FadeIn'
 import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
+import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { RootLayout } from '@/components/RootLayout'
 import { loadCaseStudies } from '@/lib/mdx'
+import { Border } from '@/components/Border'
+import Image from 'next/image'
+
 
 export default async function CaseStudyLayout({ caseStudy, children }) {
   let allCaseStudies = await loadCaseStudies()
@@ -18,39 +21,15 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
     <RootLayout>
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
-          <PageIntro eyebrow="Case Study" title={caseStudy.title} centered>
+          <PageIntro eyebrow="Service" title={caseStudy.title} centered>
             <p>{caseStudy.description}</p>
           </PageIntro>
 
           <FadeIn>
-            <div className="mt-24 border-t border-neutral-200 bg-white/50 sm:mt-32 lg:mt-40">
-              <Container>
-                <div className="mx-auto max-w-5xl">
-                  <dl className="-mx-6 grid grid-cols-1 text-sm text-neutral-950 sm:mx-0 sm:grid-cols-3">
-                    <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-t-0 sm:border-l">
-                      <dt className="font-semibold">Client</dt>
-                      <dd>{caseStudy.client}</dd>
-                    </div>
-                    <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-t-0 sm:border-l">
-                      <dt className="font-semibold">Year</dt>
-                      <dd>
-                        <time dateTime={caseStudy.date.split('-')[0]}>
-                          {caseStudy.date.split('-')[0]}
-                        </time>
-                      </dd>
-                    </div>
-                    <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-t-0 sm:border-l">
-                      <dt className="font-semibold">Service</dt>
-                      <dd>{caseStudy.service}</dd>
-                    </div>
-                  </dl>
-                </div>
-              </Container>
-            </div>
-
             <div className="border-y border-neutral-200 bg-neutral-100">
               <div className="mx-auto -my-px max-w-304 bg-neutral-200">
-                <GrayscaleTransitionImage
+                <Image
+                  alt="Wireless and Networks"
                   {...caseStudy.image}
                   quality={90}
                   className="w-full"
@@ -66,16 +45,18 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
           <FadeIn>
             <MDXComponents.wrapper>{children}</MDXComponents.wrapper>
           </FadeIn>
+
         </Container>
       </article>
 
-      {moreCaseStudies.length > 0 && (
+
+     {moreCaseStudies.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
           title="More case studies"
           pages={moreCaseStudies}
         />
-      )}
+      )} 
 
       <ContactSection />
     </RootLayout>
