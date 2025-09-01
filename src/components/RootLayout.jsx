@@ -48,6 +48,7 @@ function Header({
   onToggle,
   toggleRef,
   invert = false,
+  show = true,
 }) {
   let { logoHovered, setLogoHovered } = useContext(RootLayoutContext)
 
@@ -63,9 +64,9 @@ function Header({
         <Logo /> 
         </Link>
         <div className="flex items-center gap-x-8">
-          <Button href="/contact" invert={invert}>
+          {/* <Button className="hidden md:block" href="/contact" invert={invert} show={show}>
             Contact us
-          </Button>
+          </Button> */}
           <button
             ref={toggleRef}
             type="button"
@@ -125,6 +126,9 @@ function Navigation() {
       <NavigationRow>
         <NavigationItem href="/products">Products</NavigationItem>
         <NavigationItem href="/careers">Careers</NavigationItem>
+      </NavigationRow>
+      <NavigationRow>
+        <NavigationItem href="/contact">Contact Us</NavigationItem>
       </NavigationRow>
     </nav>
   )

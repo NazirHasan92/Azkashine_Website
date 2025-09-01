@@ -3,11 +3,11 @@ import Image from 'next/image'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { GridList, GridListItem } from '@/components/GridList'
-import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
 import { Testimonial } from '@/components/Testimonial'
-import aboutUs from '@/images/about-us.png'
+import { FadeIn } from '@/components/FadeIn'
+import aboutUs from '@/images/aboutUs.jpg'
 import { loadArticles } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
@@ -66,11 +66,14 @@ function AboutUs() {
       </div>
       {/* Image */}
       <div className="md:w-1/2 flex justify-center">
+       <FadeIn>
         <Image
           src={aboutUs}
           alt=""
           className="rounded-xl shadow-lg object-cover"
+          unoptimized
         />
+       </FadeIn>
       </div>
     </section>
     </div>

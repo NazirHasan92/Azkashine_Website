@@ -1,8 +1,15 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/products/page": "app/products/page.js",
-  "/page": "app/page.js",
+  "/services/devops/page": "app/services/devops/page.js",
   "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/page": "app/page.js",
+  "/services/network/page": "app/services/network/page.js",
+  "/services/placement_services/page": "app/services/placement_services/page.js",
+  "/services/page": "app/services/page.js",
+  "/services/ai/page": "app/services/ai/page.js",
+  "/products/page": "app/products/page.js",
   "/careers/page": "app/careers/page.js",
-  "/services/page": "app/services/page.js"
+  "/services/sap/page": "app/services/sap/page.js"
 }

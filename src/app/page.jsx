@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Border } from '@/components/Border'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
@@ -94,6 +93,7 @@ function Services() {
                 src={imageLaptop}
                 sizes="(min-width: 1024px) 41rem, 31rem"
                 className="justify-center lg:justify-end"
+                unoptimized
               />
             </FadeIn>
           </div>
@@ -208,8 +208,6 @@ export default async function Home() {
       </Container>
 
         {/* <CaseStudies caseStudies={caseStudies} /> */}
-
-
 
       <Clients />
 

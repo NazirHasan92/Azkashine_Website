@@ -34,7 +34,7 @@ function PageLink({ page }) {
           dateTime={page.date}
           className="order-first text-sm text-neutral-600"
         >
-          {formatDate(page.date)}
+          
         </time>
         <p className="mt-2.5 text-base text-neutral-600">{page.description}</p>
         <Link

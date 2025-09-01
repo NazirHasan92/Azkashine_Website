@@ -1,13 +1,11 @@
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
-import { GrayscaleTransitionImage } from '@/components/GrayscaleTransitionImage'
 import { MDXComponents } from '@/components/MDXComponents'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { RootLayout } from '@/components/RootLayout'
 import { loadCaseStudies } from '@/lib/mdx'
-import { Border } from '@/components/Border'
 import Image from 'next/image'
 
 
@@ -29,12 +27,12 @@ export default async function CaseStudyLayout({ caseStudy, children }) {
             <div className="border-y border-neutral-200 bg-neutral-100">
               <div className="mx-auto -my-px max-w-304 bg-neutral-200">
                 <Image
-                  alt="Wireless and Networks"
+                  alt="Services"
                   {...caseStudy.image}
                   quality={90}
                   className="w-full"
                   sizes="(min-width: 1216px) 76rem, 100vw"
-                  priority
+                  unoptimized
                 />
               </div>
             </div>
