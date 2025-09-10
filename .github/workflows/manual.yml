@@ -1,9 +1,9 @@
-name: Deploy to Hostinger
+name: Deploy to Hostinger (with rollback)
 
 on:
   push:
     branches:
-      - main   # 👈 change if your default branch is "master"
+      - master   # change if your branch is "master"
 
 jobs:
   build-and-deploy:
@@ -19,11 +19,33 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Deploy via FTP
+      - name: Backup current site (before deploy)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./backup
           server-dir: public_html/
+          method: download   # 👈 grabs current live files into backup folder
+        continue-on-error: true  # ignore if backup fails
+
+      - name: Deploy new site
+        id: deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out
+          server-dir: public_html/
+
+      - name: Rollback if deploy failed
+        if: failure()
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./backup
+          server-dir: public_html/
