@@ -90,7 +90,7 @@ export default async function Work() {
              We optimize business processes with cutting-edge SAP & Enterprise Data Management solutions.
         </p>
          <p className='mt-6 max-w-3xl text-neutral-600'>
-            Our Placement Services connect businesses with top-tier talent, and our Licensed Software Vending & IP Registrations safeguard intellectual property while enhancing usability. Together, these services empower clients to thrive in the digital age.
+            Our IT Consulting services connect businesses with top-tier talent, and our Licensed Software Vending & IP Registrations safeguard intellectual property while enhancing usability. Together, these services empower clients to thrive in the digital age.
          </p>
       </PageIntro>
 

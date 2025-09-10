@@ -151,8 +151,8 @@ function Services() {
                 </Link>
             </ListItem>
 
-             <ListItem title="Placement Services (B2B)">
-              We offer premier Placement Services, connecting businesses with top-tier talent through our extensive network and rigorous selection processes.
+             <ListItem title="IT Consulting">
+              We offer premier IT Consulting services, connecting businesses with top-tier talent through our extensive network and rigorous selection processes.
                 <Link
                   href={"services/placement_services"}
                   className="mt-6 flex gap-x-3 text-base text-neutral-950 transition hover:text-neutral-700"

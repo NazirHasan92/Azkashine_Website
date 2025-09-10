@@ -64,9 +64,11 @@ function Header({
         <Logo /> 
         </Link>
         <div className="flex items-center gap-x-8">
-          {/* <Button className="hidden md:block" href="/contact" invert={invert} show={show}>
+          <div className="hidden md:block">
+          <Button  href="/contact" invert={invert} show={show}>
             Contact us
-          </Button> */}
+          </Button>
+          </div>
           <button
             ref={toggleRef}
             type="button"
@@ -127,9 +129,11 @@ function Navigation() {
         <NavigationItem href="/products">Products</NavigationItem>
         <NavigationItem href="/careers">Careers</NavigationItem>
       </NavigationRow>
-      <NavigationRow>
-        <NavigationItem href="/contact">Contact Us</NavigationItem>
-      </NavigationRow>
+      <div className='block md:hidden'>
+        <NavigationRow>
+          <NavigationItem href="/contact">Contact Us</NavigationItem>
+        </NavigationRow>
+      </div>
     </nav>
   )
 }
