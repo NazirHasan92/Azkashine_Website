@@ -8,6 +8,7 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Button } from '@/components/Button'
+import { ImageCarousel } from '@/components/ImageCarousel'
 
 import alphaPower from '@/images/clients/alpha_power.png'
 import csg from '@/images/clients/csg.png'
@@ -18,8 +19,17 @@ import sasken from '@/images/clients/sasken.png'
 import unionsys from '@/images/clients/unionsys.png'
 
 import imageLaptop from '@/images/laptop.jpg'
+import image1 from '@/images/1.png'
+import image2 from '@/images/2.png'
+import image3 from '@/images/3.png'
+import image4 from '@/images/4.png'
+import image5 from '@/images/5.png'
+import image6 from '@/images/6.png'
+import image7 from '@/images/7.png'
 import { loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
+
+const carouselImages = [image1, image2, image3, image4, image5, image6, image7]
 
 
 const clients = [
@@ -180,31 +190,36 @@ export default async function Home() {
 
   return (
     <RootLayout>
-      <Container className="mt-24 sm:mt-32 md:mt-56">
-        <FadeIn className="max-w-5xl">
-          <h1 className="font-display text-6xl font-medium tracking-tight text-balance text-neutral-950 sm:text-7xl">
-            Transformation Admired 
-          </h1>
+      <Container className="mt-24 sm:mt-32 md:mt-32">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-center">
+          <FadeIn className="lg:w-[40%]">
+            <h1 className="font-display text-4xl font-medium tracking-tight text-neutral-950 sm:text-5xl">
+              Transformation Admired
+            </h1>
 
-          <h1 className="mt-6 font-display text-base font-semibold text-neutral-950 text-xl">
-            Unlock potential through software and services tailored for your success.
-          </h1>
+            <h1 className="mt-6 font-display text-base font-semibold text-neutral-950 text-xl">
+              Unlock potential through software and services tailored for your success.
+            </h1>
 
-          <p className="mt-6 text-neutral-600">
-           We drive technology-led transformation, delivering future-ready solutions that empower enterprises to scale, innovate, and thrive in an evolving digital landscape.
-          </p>
+            <p className="mt-6 text-neutral-600">
+             We drive technology-led transformation, delivering future-ready solutions that empower enterprises to scale, innovate, and thrive in an evolving digital landscape.
+            </p>
 
-          <p>
-            <Button
-              href={"/about"}
-              aria-label={`Read more`}
-              className="mt-8"
-            >
-              Read more
-            </Button>
-          </p>
+            <p>
+              <Button
+                href={"/about"}
+                aria-label={`Read more`}
+                className="mt-8"
+              >
+                Read more
+              </Button>
+            </p>
+          </FadeIn>
 
-        </FadeIn>
+          <FadeIn className="lg:w-[60%]">
+            <ImageCarousel images={carouselImages} />
+          </FadeIn>
+        </div>
       </Container>
 
         {/* <CaseStudies caseStudies={caseStudies} /> */}
