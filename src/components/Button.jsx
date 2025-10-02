@@ -2,7 +2,6 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 export function Button({ invert = false, className, children, ...props }) {
-  console.log(props)
   className = clsx(
     className,
     'inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition',
@@ -11,7 +10,6 @@ export function Button({ invert = false, className, children, ...props }) {
       : 'bg-neutral-950 text-white hover:bg-neutral-800',
   )
 
-  console.log(className)
   let inner = <span className="relative top-px">{children}</span>
 
   if (typeof props.href === 'undefined') {

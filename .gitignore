@@ -10,3 +10,7 @@ public
 .next
 yarn-error.log
 npm-debug.log
+
+# Deployment documentation
+DEPLOYMENT_READY.md
+CONTACT_FORM_SETUP.md

@@ -15,7 +15,7 @@ import { unifiedConditional } from 'unified-conditional'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   trailingSlash: true,
-  output: 'export',
+  output: 'export', // Static export enabled - using PHP for contact form
 }
 
 function remarkMDXLayout(source, metaName) {
