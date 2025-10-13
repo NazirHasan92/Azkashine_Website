@@ -17,6 +17,8 @@ import openInsights from '@/images/clients/open_insights.png'
 import prowess from '@/images/clients/prowess.png'
 import sasken from '@/images/clients/sasken.png'
 import unionsys from '@/images/clients/unionsys.png'
+import cloudit from '@/images/clients/cloudit.png'
+
 
 import imageLaptop from '@/images/laptop.jpg'
 import image1 from '@/images/1.png'
@@ -40,6 +42,7 @@ const clients = [
   ['Prowess', prowess],
   ['Sasken', sasken],
   ['UNIONSYS TECHNOLOGIES', unionsys],
+  ['Cloud IT', cloudit],
 ]
 
 function ArrowIcon(props) {
