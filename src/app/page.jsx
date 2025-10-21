@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 import { List, ListItem } from '@/components/List'
@@ -9,6 +8,7 @@ import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Button } from '@/components/Button'
 import { ImageCarousel } from '@/components/ImageCarousel'
+import { PartnersSlider } from '@/components/PartnersSlider'
 
 import alphaPower from '@/images/clients/alpha_power.png'
 import csg from '@/images/clients/csg.png'
@@ -18,6 +18,7 @@ import prowess from '@/images/clients/prowess.png'
 import sasken from '@/images/clients/sasken.png'
 import unionsys from '@/images/clients/unionsys.png'
 import cloudit from '@/images/clients/cloudit.png'
+import amantya from '@/images/clients/amantya.png'
 
 
 import imageLaptop from '@/images/laptop.jpg'
@@ -28,10 +29,13 @@ import image4 from '@/images/4.png'
 import image5 from '@/images/5.png'
 import image6 from '@/images/6.png'
 import image7 from '@/images/7.png'
+import image8 from '@/images/8.png'
+import image9 from '@/images/9.png'
+import image10 from '@/images/10.png'
 import { loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
-const carouselImages = [image1, image2, image3, image4, image5, image6, image7]
+const carouselImages = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10]
 
 
 const clients = [
@@ -43,6 +47,7 @@ const clients = [
   ['Sasken', sasken],
   ['UNIONSYS TECHNOLOGIES', unionsys],
   ['Cloud IT', cloudit],
+  ['AMANTYA', amantya]
 ]
 
 function ArrowIcon(props) {
@@ -59,28 +64,20 @@ function ArrowIcon(props) {
 
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-200 py-20 sm:mt-32 sm:py-32 lg:mt-58">
+    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-58">
       <Container>
-        <FadeIn className="flex items-center gap-x-8">
-          <h1 className="font-display text-xl font-medium tracking-tight text-black text-balance  sm:text-5xl">
-            Our Global Partners
-          </h1>
-          <div className="h-px flex-auto bg-black" />
-        </FadeIn>
-        <FadeInStagger faster>
-          <ul
-            role="list"
-            className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4 rounded-4xl"
-          >
-            {clients.map(([client, logo]) => (
-              <li key={client}>
-                <FadeIn>
-                  <Image src={logo} alt={client} unoptimized  />
-                </FadeIn>
-              </li>
-            ))}
-          </ul>
-        </FadeInStagger>
+        <div className="h-px bg-[#00A0E3] mb-12" />
+        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-x-12">
+          <FadeIn className="lg:w-1/3">
+            <h1 className="font-display text-xl font-medium tracking-tight text-white text-balance sm:text-5xl">
+              Our Collaborations
+            </h1>
+          </FadeIn>
+          <div className="mt-8 lg:mt-0 lg:w-2/3 flex justify-center">
+            <PartnersSlider partners={clients} />
+          </div>
+        </div>
+        <div className="h-px bg-[#00A0E3] mt-12" />
       </Container>
     </div>
   )
@@ -227,12 +224,9 @@ export default async function Home() {
 
         {/* <CaseStudies caseStudies={caseStudies} /> */}
 
-      <Clients />
-
-
       <Services />
 
-      <ContactSection />
+      <Clients />
     </RootLayout>
   )
 }
