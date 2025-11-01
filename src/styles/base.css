@@ -15,3 +15,8 @@
   font-stretch: 75% 125%;
   src: url('../fonts/trebuc.ttf') format('ttf');
 }
+
+/* Pause marquee animation on hover */
+.pause-marquee:hover {
+  animation-play-state: paused;
+}

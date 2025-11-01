@@ -8,7 +8,7 @@ import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Button } from '@/components/Button'
 import { ImageCarousel } from '@/components/ImageCarousel'
-import { PartnersSlider } from '@/components/PartnersSlider'
+import { PartnersTicker } from '@/components/PartnersTicker'
 
 import alphaPower from '@/images/clients/alpha_power.png'
 import csg from '@/images/clients/csg.png'
@@ -19,6 +19,9 @@ import sasken from '@/images/clients/sasken.png'
 import unionsys from '@/images/clients/unionsys.png'
 import cloudit from '@/images/clients/cloudit.png'
 import amantya from '@/images/clients/amantya.png'
+import tekkacel from '@/images/clients/tekkacel.png'
+import rar from '@/images/clients/rar.png'
+import vvdn from '@/images/clients/vvdn.png'
 
 
 import imageLaptop from '@/images/laptop.jpg'
@@ -47,7 +50,10 @@ const clients = [
   ['Sasken', sasken],
   ['UNIONSYS TECHNOLOGIES', unionsys],
   ['Cloud IT', cloudit],
-  ['AMANTYA', amantya]
+  ['AMANTYA', amantya],
+  ['VVDN Technologies', vvdn],
+  ['Tekkacel', tekkacel],
+  ['RAR Systems', rar]
 ]
 
 function ArrowIcon(props) {
@@ -64,20 +70,16 @@ function ArrowIcon(props) {
 
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-58">
+    <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 sm:py-40 lg:mt-58 lg:py-48">
       <Container>
-        <div className="h-px bg-[#00A0E3] mb-12" />
-        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-x-12">
-          <FadeIn className="lg:w-1/3">
-            <h1 className="font-display text-xl font-medium tracking-tight text-white text-balance sm:text-5xl">
-              Our Collaborations
-            </h1>
-          </FadeIn>
-          <div className="mt-8 lg:mt-0 lg:w-2/3 flex justify-center">
-            <PartnersSlider partners={clients} />
-          </div>
-        </div>
-        <div className="h-px bg-[#00A0E3] mt-12" />
+        <div className="h-px bg-[#00A0E3] mb-16" />
+        <FadeIn className="text-center mb-16 sm:mb-20 lg:mb-24">
+          <h1 className="font-display text-4xl font-medium tracking-tight text-white text-balance sm:text-5xl md:text-6xl lg:text-7xl">
+            Our Collaborations
+          </h1>
+        </FadeIn>
+        <PartnersTicker partners={clients} />
+        <div className="h-px bg-[#00A0E3] mt-16 sm:mt-20 lg:mt-24" />
       </Container>
     </div>
   )
